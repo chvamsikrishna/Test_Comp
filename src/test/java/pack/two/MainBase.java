@@ -3,6 +3,7 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
@@ -18,7 +19,8 @@ public class MainBase {
 	     @BeforeClass
 	     public void setUp() throws Exception
 	     {
-	    	driver = new ChromeDriver();
+	    	ChromeOptions op = new ChromeOptions();
+	    	driver = new ChromeDriver(op);
 	    	
 	    	String envName = System.getProperty("env");
 			System.out.println("Test cases are running on --"+ envName);
